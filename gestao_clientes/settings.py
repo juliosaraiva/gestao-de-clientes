@@ -29,6 +29,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = [
     'julinux-gestao-clientes.herokuapp.com',
+    'localhost',
 ]
 
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrapform',
     'clientes',
     'home',
 ]
