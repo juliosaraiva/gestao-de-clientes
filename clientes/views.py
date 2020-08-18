@@ -6,7 +6,8 @@ from .forms import PersonForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 
 class PersonList(ListView):
@@ -25,7 +26,18 @@ class PersonDetail(DetailView):
 class PersonCreate(CreateView):
     model = Person
     fields = ['first_name', 'last_name', 'age', 'salary', 'bio']
-    success_url = '/clientes/person_list/'
+    success_url = reverse_lazy('person-list')
+
+
+class PersonUpdate(UpdateView):
+    model = Person
+    fields = ['first_name', 'last_name', 'age', 'salary', 'bio']
+    success_url = reverse_lazy('person-list')
+
+
+class PersonDelete(DeleteView):
+    model = Person
+    success_url = reverse_lazy('person-list')
 
 
 @login_required

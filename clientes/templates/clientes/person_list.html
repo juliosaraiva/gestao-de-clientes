@@ -1,6 +1,6 @@
 <h1>Hi Everyone!</h1>
 <ul>
     {% for person in object_list %}
-       <a href="{% url 'person-detail' person.id %}"><li>{{ person.bio }}</li></a>
+       <a href="{% url 'person-detail' person.id %}"><li>{{ person.first_name }} {{ person.last_name }}</li></a>
     {% endfor %}
 </ul>

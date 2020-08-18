@@ -2,3 +2,6 @@
 <p>{{ object.bio }}</p>
 
 Time now: {{ now }}
+
+<a href="{% url 'person-update' object.id %}">Update</a>
+<a href="{% url 'person-delete' object.id %}">Remover</a>
